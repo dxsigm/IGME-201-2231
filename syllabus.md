@@ -11,7 +11,7 @@ Prerequisites: C- or better in IGME-102 or equivalent course and student standin
 - Professor David Schuh
 - Textbook: _Beginning C#_ by Karli Watson, et al.  PDF available for download in the Content section of myCourses.
 - Personal Zoom: https://rit.zoom.us/j/98466640253
-- Slack workspace: TBD
+- Slack workspace: https://igme-201-01-2231.slack.com
 - Email: dxsigm@rit.edu
 - Office hours: Wed 7-9pm on https://rit.zoom.us/j/98466640253 and anytime via Slack and myCourses "Help Dropbox" in Assignments
 - Class meeting:
@@ -48,7 +48,7 @@ Most course materials and example code will be distributed via GitHub and myCour
 
 myCourses will be used for announcements, links to course content, quizzes and exams, assignment submissions, and grading.
 
-A Slack workspace (TBD) has been created to provide an avenue of communication between professors, teaching assistants, and students. You should use Slack as your primary way for getting in touch with your professor (unless instructed otherwise) and use email only for ‘official business’ where a more formal record is required.  The Slack server will be either deleted or wiped clean at the end of the semester, so be sure to ‘save’ any great piece of information you see on it elsewhere.  Please request membership in our Slack workspace within the first day of classes.
+A Slack workspace (https://igme-201-01-2231.slack.com) has been created to provide an avenue of communication between professors, teaching assistants, and students. You should use Slack as your primary way for getting in touch with your professor (unless instructed otherwise) and use email only for ‘official business’ where a more formal record is required.  The Slack server will be either deleted or wiped clean at the end of the semester, so be sure to ‘save’ any great piece of information you see on it elsewhere.  Please request membership in our Slack workspace within the first day of classes.
 
 ## Attendance
 Lectures will start promptly at the beginning of class, and may be followed by an in-class assignment or exercise that you are expected to work on until the end of the meeting (i.e. no leaving early unless specifically dismissed).  Due to the impact of COVID-19, I understand that your ability to attend every lecture may be affected.  Therefore your attendance is based on your overall engagement in the course and not just being present for the on-line lectures.
