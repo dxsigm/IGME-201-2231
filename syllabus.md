@@ -21,14 +21,14 @@ Prerequisites: C- or better in IGME-102 or equivalent course and student standin
 
 ## Course Goals and Objectives
 At the end of this course, a student should be able to implement moderately large programming projects either individually and/or in a team. Specifically, a student should:
--       Demonstrate the ability to translate UI/UX requirements into working programs with an emphasis on usability and presentation.
--       Demonstrate the ability to construct and use linear data structures to design software solutions. Data structures include lists, stacks and queues.
--       Demonstrate the ability to design and implement software applications that use event-driven graphical user interfaces using Windows Forms.
--       Describe how exceptions work, explain their uses and employ them in their own designs.
--       Define inheritance and interface relationships and appropriately use design patterns in their own program designs.
--       Read and write files from within a software application.
--       Demonstrate the ability to construct multi-threaded programs that may run on multi-core computers.
--       Implement software applications that use basic networking protocols.
+- Demonstrate the ability to translate UI/UX requirements into working programs with an emphasis on usability and presentation.
+- Demonstrate the ability to construct and use linear data structures to design software solutions. Data structures include lists, stacks and queues.
+- Demonstrate the ability to design and implement software applications that use event-driven graphical user interfaces using Windows Forms.
+- Describe how exceptions work, explain their uses and employ them in their own designs.
+- Define inheritance and interface relationships and appropriately use design patterns in their own program designs.
+- Read and write files from within a software application.
+- Demonstrate the ability to construct multi-threaded programs that may run on multi-core computers.
+- Implement software applications that use basic networking protocols.
 
 We will assess all of this work with in-class exercises, homework, projects, and exams, as discussed below.
 
@@ -65,7 +65,7 @@ Final course grades are determined using the following scale (pluses and minuses
 | <65%  | F |
 
 ### Team Project (25%)
--       Presentation-rich Front-end User Application due last day of finals and presented during the scheduled final exam time.
+- Presentation-rich Front-end User Application due last day of finals and presented during the scheduled final exam time.
 
 ### Exams (40%)
 These take-home exams, for which you will have at least 9 days to complete, consist of all manner of questions styles (multiple choice, true/false, matching, etc) as well as "write some code" questions. There will be no make-ups or re-takes allowed without prior permission.
@@ -108,9 +108,9 @@ Incomplete grades will be given only in the most exceptional circumstances, sole
 The course policy on academic dishonesty is simple: If you get caught cheating or plagiarizing, you get an "F" as a grade for the course, a letter detailing the incident goes into your records folder, and you are immediately removed from the class. (If this is a second occurrence during your career at RIT, the penalties are harsher.) Please review RIT's policy on academic dishonesty: http://www.rit.edu/~w-policy/sectionD/D8.html
 
 ## Important RIT Deadlines
--       Last day of add/drop is Tuesday, Sep 5, 2023.
--       Last day to withdraw with a grade of "W" is Friday, Nov 10, 2023.
--       You have one semester after the class has ended to challenge your grade.
+- Last day of add/drop is Tuesday, Sep 5, 2023.
+- Last day to withdraw with a grade of "W" is Friday, Nov 10, 2023.
+- You have one semester after the class has ended to challenge your grade.
 
 ## Notices of Accommodation
 If you have a "Notice of Accommodation", your professor should have received a copy electronically. Please discuss this with me after class, via Slack, or during my office hours, so that I can make sure all of your accommodations are met.
@@ -118,12 +118,12 @@ If you have a "Notice of Accommodation", your professor should have received a c
 ## Discrimination and Harassment
 RIT is committed to providing a safe learning environment, free of harassment and discrimination as articulated in our university policies located on our governance website. RIT’s policies require faculty to share information about incidents of gender based discrimination and harassment with RIT’s Title IX coordinator or deputy coordinators, regardless whether the incidents are stated to them in person or shared by students as part of their coursework.
 If you have a concern related to gender-based discrimination and/or harassment and prefer to have a confidential discussion, assistance is available from one of RIT’s confidential resources on campus (listed below).
-1.      The Center for Women & Gender: Campus Center Room 1760, 585-475-7464; CARES (available 24 hours/7 days a week) Call or text 585-295-3533.
-2.      RIT Student Health Center – August Health Center / 1st floor 585-475-2255.
-3.      RIT Counseling Center - August Health Center / 2nd floor – 2100, 585-475-2261.
-4.      The Ombuds Office – Student Alumni Union / Room 1110, 585-475-7200, 585-475-7357, or 585-475-2876.
-5.      The Center for Religious Life – Schmitt Interfaith Center / Room 1400, 585-475-2137.
-6.      NTID Counseling & Academic Advising Services – 2nd Floor Lynden B. Johnson, 585-475-6468 (v), 585-286-4070 (vp)
+1. The Center for Women & Gender: Campus Center Room 1760, 585-475-7464; CARES (available 24 hours/7 days a week) Call or text 585-295-3533.
+2. RIT Student Health Center – August Health Center / 1st floor 585-475-2255.
+3. RIT Counseling Center - August Health Center / 2nd floor – 2100, 585-475-2261.
+4. The Ombuds Office – Student Alumni Union / Room 1110, 585-475-7200, 585-475-7357, or 585-475-2876.
+5. The Center for Religious Life – Schmitt Interfaith Center / Room 1400, 585-475-2137.
+6. NTID Counseling & Academic Advising Services – 2nd Floor Lynden B. Johnson, 585-475-6468 (v), 585-286-4070 (vp)
 
 ## Finally...
 Any or all of the previous information is subject to change or modification during the semester. Any changes to the syllabus will be visible here on GitHub, and will be announced in class.
