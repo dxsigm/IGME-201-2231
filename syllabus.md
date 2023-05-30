@@ -51,7 +51,7 @@ myCourses will be used for announcements, links to course content, quizzes and e
 A Slack workspace (https://igme-201-01-2231.slack.com) has been created to provide an avenue of communication between professors, teaching assistants, and students. You should use Slack as your primary way for getting in touch with your professor (unless instructed otherwise) and use email only for ‘official business’ where a more formal record is required.  The Slack server will be either deleted or wiped clean at the end of the semester, so be sure to ‘save’ any great piece of information you see on it elsewhere.  Please request membership in our Slack workspace within the first day of classes.
 
 ## Attendance
-Lectures will start promptly at the beginning of class, and may be followed by an in-class assignment or exercise that you are expected to work on until the end of the meeting (i.e. no leaving early unless specifically dismissed).  Due to the impact of COVID-19, I understand that your ability to attend every lecture may be affected.  Therefore your attendance is based on your overall engagement in the course and not just being present for the on-line lectures.
+Lectures will start promptly at the beginning of class, and may be followed by an in-class assignment or exercise that you are expected to work on until the end of the meeting (i.e. no leaving early unless specifically dismissed).
 
 ## Grading
 Final course grades are determined using the following scale (pluses and minuses will be applied judiciously):
