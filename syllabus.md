@@ -80,7 +80,7 @@ Homeworks, in-class exercises, checkpoints, and other assignments are essential 
 Assignments never submitted on myCourses, or submitted LATE without a valid excuse will receive a score of ZERO for that assignment. (Procrastination is not a valid excuse). If you feel you have a legitimate excuse, please contact the professor in **advance** of the due date either by email or during office hours.
 
 ### Attendance, Participation and Engagement (5%)
-Your engagement in the class will be graded based on attendance, office hour communication, and Slack and Help Dropbox activity.  Each absence is a loss of 1 of 5 points (and thus 1% off of your final grade). Each additional absence beyond 5 is 5% off of final average.
+Your engagement in the class will be graded based on attendance, office hour communication, and Slack and Help Dropbox activity.  Each class absence is a loss of 1 of 5 points (and thus 1% off of your final grade). Each additional absence beyond 5 is 5% off of final average.
 
 ### Self-Grading
 I am inviting you to participate in the grading process for the homeworks.  Research shows that self-grading increases student learning, reflection and self-assessment of your progress.  I will post the answers as they are due with the distribution of points for each part of the homework.  You will need to assess your grade against these rubrics.  I **will** check your work and give you feedback, but I will **only** adjust grades **upward**.  I trust the evolution of your self-assessment skills, and I will add points if I think you are being too critical of yourself.
@@ -99,13 +99,13 @@ References for your curiosity:
 There are 30 homeworks, 3 unit tests, 1 final exam, a team project pitch, documentation submissions and presentations. The first 2 units of the course are intended to make you proficient in C# procedural and object oriented programming, therefore there are approx 3 homeworks a week to give you plenty of practice.  Unit 3 focuses on Windows Forms Programming and the homeworks primarily are tutorials to give you UI/UX practice with the toolbox of controls you will need to implement your team project.  The homeworks become lighter as the semester progresses to give you more time to work with your team on the final project.  I am expecting you to apply yourself to the course material for at least 2 hours per 1 hour lecture.  While at college your job is to be a student, and that should be a full-time job of at least 40 hours per week across all of your courses.
 
 ### Extra Credit
-I do want everyone to earn A's!  Therefore there will be at least 5 extra credit assignments which can **each** add up to 5 points to your **final grade**.  But I only grant 5 points if they are done proficiently, with ample comments and well-designed structure.  These will be assigned as we learn the relevant material, and they are due approximately a week before the end of final exams.
+I do want everyone to earn A's!  Therefore there will be at least 5 extra credit assignments which can **each** add up to 5 points to your **final grade**.  But I only grant 5 points if they are done proficiently, with ample comments and well-designed structure.  They are due approximately a week before the end of final exams, but you can submit them any time.
 
 ### Policy on Incomplete Grades
 Incomplete grades will be given only in the most exceptional circumstances, solely for issues that arise AFTER the 'W' deadline has passed, and then only by prior arrangement with the professor. Being overcommitted, overwhelmed, and/or not having enough time to complete your coursework is not sufficient justification for an "I". Instead, meet with the professor as early as possible in the semester if you're having difficulty.
 
 ### Academic Dishonesty
-The course policy on academic dishonesty is simple: If you get caught cheating or plagiarizing, you get an "F" as a grade for the course, a letter detailing the incident goes into your records folder, and you are immediately removed from the class. (If this is a second occurrence during your career at RIT, the penalties are harsher.) Please review RIT's policy on academic dishonesty: http://www.rit.edu/~w-policy/sectionD/D8.html
+The course policy on academic dishonesty is simple: If you get caught cheating or plagiarizing, you get an "F" as a grade for the course, a letter detailing the incident goes into your records folder, and you are immediately removed from the class. (If this is a second occurrence during your career at RIT, the penalties are harsher.) While AI such as ChatGPT can give additional insight to a subject area, it is plagiarism to submit AI-generated answers.  All submissions must follow the methods taught in class, otherwise they will be considered plagiarism.  Please review RIT's policy on academic dishonesty: http://www.rit.edu/~w-policy/sectionD/D8.html
 
 ## Important RIT Deadlines
 - Last day of add/drop is Tuesday, Sep 5, 2023.
