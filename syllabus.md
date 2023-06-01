@@ -68,11 +68,11 @@ Final course grades are determined using the following scale (pluses and minuses
 - Presentation-rich Front-end User Application due last day of finals and presented during the scheduled final exam time.
 
 ### Exams (40%)
-These take-home exams, for which you will have at least 9 days to complete, consist of all manner of questions styles (multiple choice, true/false, matching, etc) as well as "write some code" questions. There will be no make-ups or re-takes allowed without prior permission.
+These take-home exams, for which you will have at least 7 days to complete, consist of all manner of questions styles (multiple choice, true/false, matching, etc) as well as "write some code" questions. There will be no make-ups or re-takes allowed without prior permission.
 -   Unit Test 1 (10%): due week 5
 -   Unit Test 2 (10%): due week 9
 -   Unit Test 3 (10%): due week 14
--   Final Exam  (10%): due last day of finals
+-   Final Exam  (10%): due finals week
 
 ### Homework & other assignments (30%)
 Homeworks, in-class exercises, checkpoints, and other assignments are essential to learning the course material. You can expect an average of one Practice Exercise per class meeting. Keep an eye on the myCourses Assignments section for the due dates.
