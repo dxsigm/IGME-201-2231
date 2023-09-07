@@ -266,10 +266,14 @@ namespace FavoriteColorAndNumber
                     Console.WriteLine("Please enter an integer.");
 
                 }
+                else
+                {
+                    // if a valid number was entered, copy it to nFavoriteNumber, since that is what we are using throughout the program
+                    // and that is what the while() condition is checking for
+                    // we need to use nFavoriteNumberInt because TryParse() only accepts an "out int" and not an "out int?"
+                    nFavoriteNumber = nFavoriteNumberInt;
+                }
             } while (nFavoriteNumber == null);
-
-            // be sure our variables are set to the same value
-            nFavoriteNumber = nFavoriteNumberInt;
 
 
             // code blocks and variable scope
@@ -311,10 +315,10 @@ namespace FavoriteColorAndNumber
             {
                 case "red":
                 // without the ToLower() we would have to check every case permutation
-                //case "RED":
-                //case "Red":
-                //case "rEd":
-                //case "reD":
+                case "RED":
+                case "Red":
+                case "rEd":
+                case "reD":
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
 
