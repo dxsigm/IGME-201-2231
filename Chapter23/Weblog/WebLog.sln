@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLog", "http://localhost/WebLog/WebLog.csproj", "{C91EF946-E4D7-4A87-AABB-2786D45EF877}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug|Default.ActiveCfg = Debug|Any CPU
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug|Default.Build.0 = Debug|Any CPU
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release|Default.ActiveCfg = Release|Any CPU
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release|Default.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug.ActiveCfg = Debug|.NET
-		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug.Build.0 = Debug|.NET
-		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release.ActiveCfg = Release|.NET
-		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {45037115-837B-4A74-9D5E-289475E06654}
 	EndGlobalSection
 EndGlobal

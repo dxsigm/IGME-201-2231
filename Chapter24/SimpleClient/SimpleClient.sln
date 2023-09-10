@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleClient", "SimpleClient.csproj", "{719CF525-A6D0-44E9-BA82-132C17C7C8E9}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Debug.ActiveCfg = Debug|.NET
-		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Debug.Build.0 = Debug|.NET
-		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Release.ActiveCfg = Release|.NET
-		{719CF525-A6D0-44E9-BA82-132C17C7C8E9}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {748C2457-1FCE-44DD-81F8-AB6137E2F5B5}
 	EndGlobalSection
 EndGlobal
