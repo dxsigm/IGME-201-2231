@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWatch", "FileWatch.csproj", "{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Debug.ActiveCfg = Debug|.NET
-		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Debug.Build.0 = Debug|.NET
-		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Release.ActiveCfg = Release|.NET
-		{B60652F5-3DBD-43F1-BBD7-E08BAE0A4A13}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {954467B4-970B-43EE-9DD7-6E1187CA0FFA}
 	EndGlobalSection
 EndGlobal

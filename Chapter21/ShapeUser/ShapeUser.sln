@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeUser", "ShapeUser.csproj", "{397E0BEC-745B-4929-962B-B7152DCF432B}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug.ActiveCfg = Debug|.NET
-		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug.Build.0 = Debug|.NET
-		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release.ActiveCfg = Release|.NET
-		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {1C416E36-A72A-4010-BDB4-77837A82B87C}
 	EndGlobalSection
 EndGlobal

@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawText", "DrawText.csproj", "{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Debug.ActiveCfg = Debug|.NET
-		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Debug.Build.0 = Debug|.NET
-		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Release.ActiveCfg = Release|.NET
-		{142C83DE-A7EE-4D39-9997-CFD96E9E3A33}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {1CDD4968-EAAC-4FD1-8B4E-287A5790CAEF}
 	EndGlobalSection
 EndGlobal

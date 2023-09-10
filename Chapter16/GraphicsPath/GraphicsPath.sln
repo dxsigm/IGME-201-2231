@@ -1,21 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsPath", "GraphicsPath.csproj", "{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Debug.ActiveCfg = Debug|.NET
-		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Debug.Build.0 = Debug|.NET
-		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Release.ActiveCfg = Release|.NET
-		{AAB7DFC3-8A4A-403B-8361-4DFFAE21B275}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {B6C04230-A2B6-43E1-A192-9AA78BF5690D}
 	EndGlobalSection
 EndGlobal
