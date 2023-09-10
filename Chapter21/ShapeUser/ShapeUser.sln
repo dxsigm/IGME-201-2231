@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeUser", "ShapeUser.csproj", "{397E0BEC-745B-4929-962B-B7152DCF432B}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug.ActiveCfg = Debug|.NET
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Debug.Build.0 = Debug|.NET
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release.ActiveCfg = Release|.NET
+		{397E0BEC-745B-4929-962B-B7152DCF432B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,27 +1,33 @@
-Microsoft Visual Studio Solution File, Format Version 7.00
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch06Ex03", "Ch06Ex03.csproj", "{6C475F6C-B83F-4184-8FEA-5F93FA588062}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC} = {C9CD53F4-E20D-416B-A2B6-9F8271645EEC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch10CardClient", "..\..\Chapter10\Ch10CardClient\Ch10CardClient.csproj", "{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		ConfigName.0 = Debug
-		ConfigName.1 = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Debug.ActiveCfg = Debug|.NET
-		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Debug.Build.0 = Debug|.NET
-		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Release.ActiveCfg = Release|.NET
-		{6C475F6C-B83F-4184-8FEA-5F93FA588062}.Release.Build.0 = Release|.NET
-		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Debug.ActiveCfg = Debug|.NET
-		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Debug.Build.0 = Debug|.NET
-		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Release.ActiveCfg = Release|.NET
-		{C9CD53F4-E20D-416B-A2B6-9F8271645EEC}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {5B6CBD9F-55EE-4608-82B6-9E09977FBBF4}
 	EndGlobalSection
 EndGlobal

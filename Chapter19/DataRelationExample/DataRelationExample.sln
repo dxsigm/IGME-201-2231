@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataRelationExample", "DataRelationExample.csproj", "{F2DC8BED-A516-4DF4-9BAA-5DC8028287C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F2DC8BED-A516-4DF4-9BAA-5DC8028287C2}.Debug.ActiveCfg = Debug|.NET
+		{F2DC8BED-A516-4DF4-9BAA-5DC8028287C2}.Debug.Build.0 = Debug|.NET
+		{F2DC8BED-A516-4DF4-9BAA-5DC8028287C2}.Release.ActiveCfg = Release|.NET
+		{F2DC8BED-A516-4DF4-9BAA-5DC8028287C2}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebLog", "http://localhost/WebLog/WebLog.csproj", "{C91EF946-E4D7-4A87-AABB-2786D45EF877}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug.ActiveCfg = Debug|.NET
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Debug.Build.0 = Debug|.NET
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release.ActiveCfg = Release|.NET
+		{C91EF946-E4D7-4A87-AABB-2786D45EF877}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

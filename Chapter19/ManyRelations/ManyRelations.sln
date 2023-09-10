@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyRelations", "ManyRelations.csproj", "{322FAC03-9CFF-414A-9D42-3478A45A2628}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{322FAC03-9CFF-414A-9D42-3478A45A2628}.Debug.ActiveCfg = Debug|.NET
+		{322FAC03-9CFF-414A-9D42-3478A45A2628}.Debug.Build.0 = Debug|.NET
+		{322FAC03-9CFF-414A-9D42-3478A45A2628}.Release.ActiveCfg = Release|.NET
+		{322FAC03-9CFF-414A-9D42-3478A45A2628}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

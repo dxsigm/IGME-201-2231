@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <AUTHOR_ID>1</AUTHOR_ID>
+    <NAME>Me</NAME>
+    <HIRE_DATE>2000-12-09T03:30:00.0000000-00:00</HIRE_DATE>
+  </Table1>
+  <Table1>
+    <AUTHOR_ID>2</AUTHOR_ID>
+    <NAME>Paul</NAME>
+    <HIRE_DATE>2001-06-06T23:56:33.0000000+01:00</HIRE_DATE>
+  </Table1>
+</NewDataSet>
