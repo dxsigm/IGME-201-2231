@@ -17,6 +17,15 @@ namespace Arrays
 
             {
                 int[] myIntArray = new int[8] { 5, 6, 7, 8, 9, 23, 123, -90 };
+                int[] myIntArray2 = new int[myIntArray.Length + 1];
+
+                for(int nCntr = 0; nCntr < myIntArray.Length; ++nCntr)
+                {
+                    myIntArray2[nCntr] = myIntArray[nCntr];
+                }
+
+                // add new element
+                myIntArray2[8] = -999;
             }
 
             {
@@ -36,7 +45,12 @@ namespace Arrays
                 myIntArray2[0] = 55;
 
                 myIntArray = null;
+                
+                myIntArray[0] = 3;  // this will crash
+                myIntArray2[0] = 3;  // this will NOT crash because myIntArray2 is still pointing at the array
+
                 myIntArray2 = null;
+
             }
 
             {
@@ -75,7 +89,7 @@ namespace Arrays
 
                 int[,] funcVal2 = new int[21, 2];
 
-                for (x = -10; x <= 10; ++x, ++xCntr)
+                for (x = -10, xCntr = 0; x <= 10; ++x, ++xCntr)
                 {
                     // Math.Pow() returns a double, so we need to cast as int
                     y = 2 * (int)Math.Pow(x, 2) + 3;
@@ -131,8 +145,21 @@ namespace Arrays
 
             {
                 int[][] jaggedIntArray = new int[2][];
+                // first dimension
+                //  0
+                //  1
+
+
                 jaggedIntArray[0] = new int[3];
+                // 0 0
+                // 0 1
+                // 0 2
+
                 jaggedIntArray[1] = new int[4];
+                // 1 0
+                // 1 1
+                // 1 2
+                // 1 3
 
                 jaggedIntArray[0][0] = 1;
                 jaggedIntArray[0][1] = 2;
@@ -184,7 +211,7 @@ namespace Arrays
                     }
                 }
 
-                for (x = -4; x <= 4; x += 0.1, nX++)
+                for (nX = 0, x = -4; x <= 4; x += 0.1, nX++)
                 {
                     x = Math.Round(x, 1);
 
