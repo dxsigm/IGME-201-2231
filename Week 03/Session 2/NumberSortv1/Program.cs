@@ -6,15 +6,6 @@ using System.Threading.Tasks;
 
 namespace NumberSortV1
 {
-    enum EColors { red, blue, yellow }
-
-    struct MyStruct
-    {
-        public string name;
-        public int age;
-        private string password;
-    }
-
     // Class: Program
     // Author: David Schuh
     // Purpose: Number Sorting example
@@ -40,6 +31,15 @@ namespace NumberSortV1
 
             // split the string into the an array of strings which are the individual numbers
             string[] sNumbers = sNumberString.Split(' ');
+
+            //" 1 2 3 4 5 6" == string
+            //""
+            //"1"
+            //    "2"
+            //    "3"
+            //    "4"
+            //    "5"
+            //    "6"
 
             // initialize the size of the unsorted array to 0
             int nUnsortedLength = 0;

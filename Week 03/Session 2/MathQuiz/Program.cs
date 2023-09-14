@@ -236,7 +236,6 @@ static class Program
         Console.WriteLine();
 
         // output how many they got correct and their score
-        Console.WriteLine($"You got {nCorrect} out of {nQuestions} correct!  That is a score of {100 * (double)nCorrect / nQuestions}%");
         
 
         Console.WriteLine();
