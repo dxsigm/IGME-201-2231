@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Security;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -71,8 +72,8 @@ namespace MethodsEnumStruct
             return left.Age < right.Age;
         }
 
-        // static methods are called by the data type not by the isntance variable
-        // ie. StudentStruct 
+        // static methods are called by the data type not by the instance variable
+        // ie. StudentStruct.SetEnrollment()
         public static void SetEnrollment(int enrollment)
         {
             StudentStruct.enrollment = enrollment;
@@ -205,12 +206,16 @@ namespace MethodsEnumStruct
 
     static internal class UtilClass
     {
+
+
         static double CalculateTheArea()
         {
             Program.ClassEnum eClass;
             eClass = Program.ClassEnum.IGME_202;
             EGenderPronoun eGender;
             eGender = EGenderPronoun.them;
+
+            StudentStruct.enrollment = 0;
 
 
             return 1;
@@ -277,6 +282,7 @@ namespace MethodsEnumStruct
                 ////maxStudent.SelfRefProperty = 42;
 
                 // structs are a value data type, the ***contents*** of student will contain the contents of maxStudent
+
                 student = maxStudent;
 
                 if(student < maxStudent)
@@ -321,7 +327,8 @@ namespace MethodsEnumStruct
                         y = Math.Round(y, 1);
 
                         ZFunction thisDataPoint = new ZFunction(x, y);
-                        zArray[dataPointCntr++] = thisDataPoint;
+                        zArray[dataPointCntr] = thisDataPoint;
+                        ++dataPointCntr;
 
                         // zArray[dataPointCntr++] = new ZFunction(x,y);
                     }
