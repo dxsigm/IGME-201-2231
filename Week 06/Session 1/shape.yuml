@@ -1,0 +1,24 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+
+[+I:IDrawObject|DrawMe()]
+
+[+A:Shape|+PI:double;=x:double;=y:double;-myInt:int|+Area():double:v;+DrawMe():a|+();+(x:double,y:double)]
+
+[+I:IDrawObject]^[+A:Shape]
+
+[+Blood|+DrawMe():v]
+[+I:IDrawObject]^[+Blood]
+
+[+Circle||+Area():double:o;+DrawMe():double:o|+(r:double):base(r,0)]
+[+A:Shape]<-.-[+Circle]
+
+[+Sphere||+Area():double:o;+DrawMe():double:o|+(r:double):base(r,0)]
+[+A:Shape]<-.-[+Sphere]
+
+[-Cylinder||+Area():double:o;+DrawMe():double:o|+(r:double,h:double):base(r,h)]
+[+A:Shape]<-.-[-Cylinder]
+
+[-Rectangle||+IsSquare:bool:r;+DrawMe():double:o|(w:double,h:double):base(w,h)]
+[+A:Shape]<-.-[-Rectangle]
