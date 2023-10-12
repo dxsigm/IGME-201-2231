@@ -17,7 +17,6 @@ namespace Shape
     {
         public virtual void DrawMe()
         {
-
         }
     }
 
