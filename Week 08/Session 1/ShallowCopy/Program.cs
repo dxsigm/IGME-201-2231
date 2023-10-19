@@ -25,7 +25,7 @@ namespace ShallowCopy
 
         public MyContent myContent = new MyContent();
 
-        public object Clone()
+        public Object Clone()
         {
             return MemberwiseClone();
         }
@@ -56,6 +56,11 @@ namespace ShallowCopy
             myClassObj.structVal.val = 42;
 
             MyClass myClassCopy = new MyClass();
+            myClassCopy.myString = myClassObj.myString;
+            myClassCopy.val = myClassObj.val;
+            myClassObj.myContent.contentString = "my content's string";
+            myClassObj.structVal.val = 42;
+
 
             myClassCopy.val = 1;
 
@@ -70,6 +75,11 @@ namespace ShallowCopy
 
             // this only copies highest value value fields from the source to the copy
             myClassCopy = (MyClass)myClassObj.Clone();
+
+            //Object
+            //    |
+            //    |
+            //MyClass
 
             
         }

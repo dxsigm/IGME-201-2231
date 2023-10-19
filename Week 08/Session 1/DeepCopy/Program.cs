@@ -11,13 +11,32 @@ namespace DeepCopy
         public int val;
     }
 
-    class MyContent : ICloneable
+    class MyContentContents : ICloneable
     {
-        public string contentString;
+        public string Name
+        {
+            get; set;
+        }
 
         public object Clone()
         {
             return MemberwiseClone();
+        }
+    }
+
+
+    class MyContent : ICloneable
+    {
+        public string contentString;
+
+        MyContentContents contentContents = new MyContentContents();
+
+
+        public object Clone()
+        {
+            MyContent myClonedContent = (MyContent)this.MemberwiseClone();
+            myClonedContent.contentContents = (MyContentContents)this.contentContents.Clone();
+            return myClonedContent;
         }
     }
 
@@ -34,6 +53,7 @@ namespace DeepCopy
 
         public object Clone()
         {
+            // make our shallow first by calling MemberwiseClone and set that equal to our copy
             MyClass clonedMyClass = (MyClass)this.MemberwiseClone();
             
             clonedMyClass.myContent = (MyContent) this.myContent.Clone();

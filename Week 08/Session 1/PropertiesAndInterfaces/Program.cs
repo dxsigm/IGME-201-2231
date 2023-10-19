@@ -25,7 +25,7 @@ namespace PropertiesAndInterfaces
     }
 
     // because Building inherits from IName and INameReadOnly, we need to implement the read/write Name property and the Build() method
-    public class Building : IName, INameReadOnly
+    public class Building : IName
     {
         public string Name
         {
@@ -111,6 +111,24 @@ namespace PropertiesAndInterfaces
         //    }
         //}
 
+        List<int> myIntList = new List<int>();
+
+        // you could have another indexer property that uses a short instead of an int as the index type!
+        public int this[short indexEl]
+        {
+            // get returns the string at the requested indexEl
+            get
+            {
+                return myIntList[indexEl];
+            }
+
+            // set adds the value to the list
+            set
+            {
+                myIntList.Add(value);
+            }
+        }
+
 
         SortedList<string, Train> trainList = new SortedList<string, Train>();
 
@@ -181,13 +199,19 @@ namespace PropertiesAndInterfaces
 
             Building myBldg = new Building();
 
-            INameReadOnly inro = myBldg;
+            INameReadOnly inro = (INameReadOnly)myBldg;
+
+            INameReadOnly inro2;
+
+            inro2 = (INameReadOnly)new Building();
+
             string myName = inro.Name;
             
             // both Building and Train have Name and Build() class members
             // so we can use the interface to access those class members even though they are completely different types of objects
             WriteNameAndBuildUsingInterface(myTrain);
-            WriteNameAndBuildUsingInterface(myBldg);
+            WriteNameAndBuildUsingInterface(
+                (INameReadOnly)myBldg);
 
             WriteNameAndBuildUsingObject(myTrain);
             WriteNameAndBuildUsingObject(myBldg);

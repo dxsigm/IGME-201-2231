@@ -44,10 +44,44 @@ namespace SongLib
             get; set;
         }
 
+        public string ReturnCompareValue()
+        {
+            return this.artist + this.nRating.ToString();
+        }
+
+
         public int CompareTo(Song s )
         {
+            int returnVal;
+
+            // to compare multiple fields
+            string thisCompareValue = this.artist + this.nRating.ToString();
+            string sCompareValue = s.artist + s.nRating.ToString();
+
+            returnVal = this.artist.CompareTo(s.artist);
+
+            if( returnVal == 0 )
+            {
+                returnVal = this.nRating - s.nRating;
+            }
+
+            //CSN
+            //Guinnevere => 1
+            //Suite:Judy Blue Eyes => 2
+            //Our House => 3
+            //
+            //Taylor Swift
+            //We'll Never be together => 1
+            //Whitehorse => 10
+            //Shake It => 2
+            //
+            //    We'll Never be together => 1
+            //    Shake It => 2
+            //    Whitehorse => 10
+
             //return this.Name.CompareTo( s.Name );
-            return this.nRating.CompareTo(s.nRating);
+            //return this.nRating.CompareTo(s.nRating);
+            return thisCompareValue.CompareTo( sCompareValue );
         }
 
         public abstract void Play();
