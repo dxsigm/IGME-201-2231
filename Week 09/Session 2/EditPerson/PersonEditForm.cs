@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PeopleLib;
 
 namespace EditPerson
 {
     public partial class PersonEditForm : Form
     {
-        public PersonEditForm()
+        public PersonEditForm(Person person, Form parentForm )
         {
             /******************************************************************************************
              **************THIS MUST BE THE FIRST FUNCTION CALL IN YOUR FORM CONSTRUCTOR **************
@@ -48,6 +49,8 @@ namespace EditPerson
             this.typeComboBox.SelectedIndexChanged += new EventHandler(TypeComboBox__SelectedIndexChanged);
 
             this.cancelButton.Click += new EventHandler(CancelButton__Click);
+
+            this.Show();
         }
 
         private void CancelButton__Click(object sender, EventArgs e)
