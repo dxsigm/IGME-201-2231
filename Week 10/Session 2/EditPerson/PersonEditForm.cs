@@ -66,6 +66,16 @@ namespace EditPerson
             this.cancelButton.Click += new EventHandler(CancelButton__Click);
             this.okButton.Click += new EventHandler(OkButton__Click);
 
+            this.greatRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
+            this.okRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
+            this.mehRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
+
+            this.photoPictureBox.Click += new EventHandler(PhotoPictureBox__Click);
+
+            //this.birthDateTimePicker.ValueChanged += new EventHandler();
+
+            
+
 
 
             // after all contols are configured then we can manipulate the data
@@ -74,6 +84,31 @@ namespace EditPerson
             this.emailTextBox.Text = person.email;
             this.ageTextBox.Text = person.age.ToString();
             this.licTextBox.Text = person.LicenseId.ToString();
+
+            if( person.name == "" )
+            {
+                person.eFavoriteFood = EFavoriteFood.pizza;
+            }
+
+            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
+
+            switch( person.eFavoriteFood)
+            {
+                case EFavoriteFood.brocolli:
+                    this.brocolliRadioButton.Checked = true;
+                    break;
+
+                case EFavoriteFood.pizza:
+                    this.pizzaRadioButton.Checked = true;
+                    break;
+
+                case EFavoriteFood.apples:
+                    this.applesRadioButton.Checked = true;
+                    break;
+            }
+
+            this.photoPictureBox.ImageLocation = person.photoPath;
+
 
             if( person.GetType() == typeof(Student) )
             {
@@ -88,10 +123,61 @@ namespace EditPerson
 
                 Teacher teacher = (Teacher)person;
                 this.specTextBox.Text = teacher.specialty;
+
+                if( person.name == "")
+                {
+                    teacher.eRating = ERating.ok;
+                }
+
+                switch( teacher.eRating )
+                {
+                    case ERating.great:
+                        this.greatRadioButton.Checked = true;
+                        break;
+                    case ERating.ok:
+                        this.okRadioButton.Checked = true;
+                        break;
+                    case ERating.meh:
+                        this.mehRadioButton.Checked = true;
+                        break;
+                }
             }
 
 
             this.Show();
+        }
+
+        private void PhotoPictureBox__Click(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+
+            if( this.openFileDialog.ShowDialog() == DialogResult.OK )
+            {
+                pb.ImageLocation = this.openFileDialog.FileName;
+            }
+        }
+
+        private void RatingRadioButton__CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if( rb.Checked )
+            {
+                if( rb == this.greatRadioButton)
+                {
+                    this.ratingLabel.Text = "sign me up";
+                }
+
+                if( rb == this.okRadioButton)
+                {
+                    this.ratingLabel.Text = "ok";
+                }
+
+                if( rb == this.mehRadioButton)
+                {
+                    this.ratingLabel.Text = "run away!";
+                }
+            }
         }
 
         private void OkButton__Click(object sender, EventArgs e)
@@ -118,13 +204,41 @@ namespace EditPerson
             person.age = Convert.ToInt32(this.ageTextBox.Text);
             person.LicenseId = Convert.ToInt32(this.licTextBox.Text);
 
-            if( person.GetType() == typeof(Student))
+            if( this.brocolliRadioButton.Checked)
+            {
+                person.eFavoriteFood = EFavoriteFood.brocolli;
+            }
+            else if( this.pizzaRadioButton.Checked)
+            {
+                person.eFavoriteFood = EFavoriteFood.pizza;
+            }
+            else if( this.applesRadioButton.Checked)
+            {
+                person.eFavoriteFood= EFavoriteFood.apples;
+            }
+
+            person.photoPath = this.photoPictureBox.ImageLocation;
+
+            if ( person.GetType() == typeof(Student))
             {
                 student.gpa = Convert.ToDouble(this.gpaTextBox.Text);
             }
             else
             {
                 teacher.specialty = this.specTextBox.Text;
+
+                if( this.greatRadioButton.Checked)
+                {
+                    teacher.eRating = ERating.great;
+                }
+                else if( this.okRadioButton.Checked)
+                {
+                    teacher.eRating = ERating.ok;
+                }
+                else if( this.mehRadioButton.Checked)
+                {
+                    teacher.eRating = ERating.meh;
+                }
             }
 
             Globals.people[person.email] = person;
@@ -170,6 +284,8 @@ namespace EditPerson
                 this.gpaTextBox.Visible = true;
 
                 this.gpaTextBox.Tag = (this.gpaTextBox.Text.Length > 0);
+
+                this.ratingGroupBox.Visible = false;
             }
             else
             {
@@ -182,6 +298,13 @@ namespace EditPerson
                 this.gpaTextBox.Visible = false;
 
                 this.specTextBox.Tag = (this.specTextBox.Text.Length > 0);
+
+                this.ratingGroupBox.Visible = true;
+
+                if( !this.greatRadioButton.Checked && !this.okRadioButton.Checked && !this.mehRadioButton.Checked)
+                {
+                    this.okRadioButton.Checked = true;
+                }
             }
 
             ValidateAll();

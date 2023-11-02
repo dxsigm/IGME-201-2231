@@ -11,10 +11,16 @@ using PeopleAppGlobals;
 using PeopleLib;
 using EditPerson;
 
+// needed for sorting ListView by column
+using System.Collections;
+
 namespace PeopleList
 {
     public partial class PeopleListForm : Form, IListView
     {
+        private int columnIndex = 1;  // default to email column
+        private int columnSortOrder = 1; // default to ascending order
+
         public PeopleListForm()
         {
             InitializeComponent();
@@ -36,7 +42,71 @@ namespace PeopleList
             // 5. use the ExitButton__Click delegate
             this.exitButton.Click += new EventHandler(ExitButton__Click);
 
+            this.peopleListView.ColumnClick += new ColumnClickEventHandler(PeopleListView__ColumnClick);
+
+            UpdateColumnAppearance(columnIndex);
+
             PaintListView(null);
+        }
+
+        private void PeopleListView__ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            ListView lv = (ListView)sender;
+
+            if( e.Column == columnIndex)
+            {
+                columnSortOrder *= -1;
+            }
+            else
+            {
+                columnIndex = e.Column;
+                columnSortOrder = 1;
+            }
+
+            // need to include the System.Collections namespace
+            lv.ListViewItemSorter = new ListViewItemComparer(e.Column, columnSortOrder);
+            lv.Sort();
+
+            UpdateColumnAppearance(columnIndex);
+        }
+
+        private void UpdateColumnAppearance(int column)
+        {
+            foreach(ColumnHeader columnHeader in this.peopleListView.Columns)
+            {
+                columnHeader.Text = columnHeader.Text.Replace(" ▲", "").Replace(" ▼", "");
+            }
+
+            string arrow = (columnSortOrder == 1) ? " ▲" : " ▼";
+            this.peopleListView.Columns[column].Text += arrow;
+        }
+
+        class ListViewItemComparer : IComparer
+        {
+            private int columnIndex;
+            private int sortOrder;
+
+            public ListViewItemComparer(int column, int order)
+            {
+                columnIndex = column;
+                sortOrder = order;
+            }
+
+            public int Compare(object x, object y)
+            {
+                ListViewItem itemX = (ListViewItem)x;
+                ListViewItem itemY = (ListViewItem)y;
+
+                if( itemX == null || itemY == null )
+                {
+                    return 0;
+                }
+
+                string textX = itemX.SubItems[columnIndex].Text;
+                string textY = itemY.SubItems[columnIndex].Text;
+
+                return string.Compare(textX, textY) * sortOrder;
+            }
         }
 
         private void ExitButton__Click(object sender, EventArgs e)
@@ -239,7 +309,7 @@ namespace PeopleList
                 lvi.SubItems.Add(lvsi);
 
                 // if this row is the first email that should be shown
-                if (nStartEl == lviCntr)
+                if( lviCntr == nStartEl )
                 {
                     // set this row as being currently selected
                     lvi.Selected = true;
