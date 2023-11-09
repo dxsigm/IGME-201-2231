@@ -24,6 +24,21 @@ namespace EditPerson
              ******************************************************************************************/
             InitializeComponent();
 
+            try
+            {
+                // Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64; Trident / 7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; wbx 1.0.0)
+                Microsoft.Win32.RegistryKey key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(
+                    @"SOFTWARE\\WOW6432Node\\Microsoft\\Internet Explorer\\MAIN\\FeatureControl\\FEATURE_BROWSER_EMULATION",
+                    true);
+                key.SetValue(Application.ExecutablePath.Replace(Application.StartupPath + "\\", ""), 12001, Microsoft.Win32.RegistryValueKind.DWord);
+                key.Close();
+            }
+            catch
+            {
+
+            }
+
+
             //foreach (Control control in this.Controls)
             foreach (Control control in this.detailsTabPage.Controls)
             {
@@ -82,7 +97,10 @@ namespace EditPerson
             this.FormClosing += new FormClosingEventHandler(PersonEditForm__FormClosing);
 
             this.allCoursesListView.ItemActivate += new EventHandler(AllCoursesListView__ItemActivate);
-            //this.allCoursesListView.KeyDown += new KeyEventHandler(AllCoursesListView__KeyDown);
+            this.allCoursesListView.KeyDown += new KeyEventHandler(AllCoursesListView__KeyDown);
+            this.courseSearchTextBox.TextChanged += new EventHandler(CourseSearchTextBox__TextChanged);
+
+            this.homepageWebBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(HomepageWebBrowser__DocumentCompleted);
 
 
             // after all contols are configured then we can manipulate the data
@@ -92,10 +110,7 @@ namespace EditPerson
             this.ageTextBox.Text = person.age.ToString();
             this.licTextBox.Text = person.LicenseId.ToString();
 
-            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
-
-
-            if ( person.name == "" )
+            if( person.name == "" )
             {
                 person.eFavoriteFood = EFavoriteFood.pizza;
             }
@@ -108,6 +123,8 @@ namespace EditPerson
 
                 this.homepageTextBox.Text = person.homePageURL;
             }
+
+            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
 
             switch( person.eFavoriteFood)
             {
@@ -164,6 +181,120 @@ namespace EditPerson
             this.Show();
         }
 
+        private void HomepageWebBrowser__DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            WebBrowser wb = (WebBrowser)sender;
+
+            if( wb.Document.Title == "DOM-3")
+            {
+                HtmlElement htmlElement;
+                HtmlElementCollection htmlElementCollection;
+
+                htmlElement = wb.Document.Body;
+                htmlElement.Style += "font-family: sans-serif; color: #a000a0;";
+
+                htmlElementCollection = wb.Document.GetElementsByTagName("h1");
+                htmlElement = htmlElementCollection[0];
+
+                htmlElement.InnerText = "My Kitten Page";
+                htmlElement.MouseOver += new HtmlElementEventHandler(Example_H1__MouseOver);
+
+                htmlElementCollection = wb.Document.GetElementsByTagName("h2");
+                htmlElementCollection[0].InnerText = "Meow!";
+                htmlElementCollection[1].InnerHtml = "<a href='http://www.kittens.com'>Kitties!</a>";
+                htmlElementCollection[1].InnerText = "";
+
+                htmlElement = wb.Document.GetElementById("lastParagraph");
+
+                HtmlElement htmlElement1 = wb.Document.CreateElement("img");
+                htmlElement1.SetAttribute("src", "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg");
+                htmlElement1.SetAttribute("title", "awwww");
+                htmlElement1.Click += new HtmlElementEventHandler(Example_IMG__Click);
+
+                htmlElement.InsertAdjacentElement(HtmlElementInsertionOrientation.AfterBegin, htmlElement1);
+
+                htmlElement1 = wb.Document.CreateElement("footer");
+
+                htmlElement1.InnerHtml = "&copy;2023 <a href='http://www.nerdtherapy.org'>D. Schuh</a>";
+
+                wb.Document.Body.AppendChild(htmlElement1);
+
+            }
+        }
+
+        private void Example_IMG__Click(object sender, EventArgs e)
+        {
+            this.homepageWebBrowser.Navigate("http://m.youtube.com/watch?v=oHg5SJYRHA0");
+        }
+
+        private void Example_H1__MouseOver(object sender, HtmlElementEventArgs e)
+        {
+            HtmlElement htmlElement = (HtmlElement)sender;
+            HtmlElementCollection htmlElementCollection;
+
+            if( htmlElement.InnerText.ToLower().Contains("kitten"))
+            {
+                htmlElement.InnerText = "My Puppy Page";
+
+                htmlElementCollection = this.homepageWebBrowser.Document.GetElementsByTagName("h2");
+                htmlElementCollection[0].InnerText = "Woof!";
+                htmlElementCollection[1].InnerHtml = "<a href='http://www.puppies.com'>Puppies!</a>";
+
+                htmlElementCollection = this.homepageWebBrowser.Document.GetElementsByTagName("img");
+                htmlElementCollection[0].SetAttribute("src", "https://www.allthingsdogs.com/wp-content/uploads/2019/05/Cute-Puppy-Names.jpg");
+            }
+            else
+            {
+                htmlElement.InnerText = "My Kitten Page";
+
+                htmlElementCollection = this.homepageWebBrowser.Document.GetElementsByTagName("h2");
+                htmlElementCollection[0].InnerText = "Meow!";
+                htmlElementCollection[1].InnerHtml = "<a href='http://www.kittens.com'>Kitties!</a>";
+
+                htmlElementCollection = this.homepageWebBrowser.Document.GetElementsByTagName("img");
+                htmlElementCollection[0].SetAttribute("src", "https://en.bcdn.biz/Images/2018/6/12/27565ee3-ffc0-4a4d-af63-ce8731b65f26.jpg");
+            }
+        }
+
+        private void CourseSearchTextBox__TextChanged( object sender, EventArgs e )
+        {
+            PaintListView(allCoursesListView);
+        }
+
+        private void AllCoursesListView__KeyDown(object sender, KeyEventArgs e)
+        {
+            Course course;
+            ListView lv = (ListView)sender;
+
+            string courseCode = null;
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                courseCode = lv.SelectedItems[0].Tag.ToString();
+
+                course = Globals.courses[courseCode];
+
+                ICourseList iCourseList = (ICourseList)formPerson;
+
+                if (course != null)
+                {
+                    if (iCourseList.CourseList.Contains(course.courseCode))
+                    {
+                        iCourseList.CourseList.Remove(course.courseCode);
+                    }
+                    else
+                    {
+                        iCourseList.CourseList.Add(course.courseCode);
+                    }
+
+                    PaintListView(this.selectedCoursesListView);
+                }
+            }
+        }
+
+
         private void AllCoursesListView__ItemActivate(object sender, EventArgs e)
         {
             Course course;
@@ -174,9 +305,6 @@ namespace EditPerson
             courseCode = lv.SelectedItems[0].Tag.ToString();
 
             course = Globals.courses[courseCode];
-            //course = Globals.courses.sortedList[courseCode];
-            //Globals.courses.sortedList.TryGetValue(courseCode, out course);
-
 
             ICourseList iCourseList = (ICourseList)formPerson;
 
@@ -344,6 +472,13 @@ namespace EditPerson
                 PaintListView(this.allCoursesListView);
                 PaintListView(this.selectedCoursesListView);
             }
+            else if( tc.SelectedTab == this.scheduleTabPage)
+            {
+                this.AcceptButton = null;
+                this.CancelButton = null;
+
+                this.scheduleWebBrowser.Navigate("https://people.rit.edu/dxsigm/schedule.html");
+            }
         }
 
         private void BirthDateTimePicker__ValueChanged(object sender, EventArgs e)
@@ -418,6 +553,8 @@ namespace EditPerson
             person.LicenseId = Convert.ToInt32(this.licTextBox.Text);
             person.dateOfBirth = this.birthDateTimePicker.Value;
             person.homePageURL = this.homepageTextBox.Text;
+            
+
 
             if ( this.brocolliRadioButton.Checked)
             {
