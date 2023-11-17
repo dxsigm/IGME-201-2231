@@ -1,0 +1,88 @@
+List of Controls
+form - "Sherlock"
+label - "The quick.."
+textbox for holding the answer
+countdown label - big and red and counted down from 20 by 1 second
+picturebox - happy face for correct characters/ sad face otherwise
+timer control - countdown from 20
+groupbox - with URL as title
+webbrowser
+exit button
+
+Pseudocode of the Form constructor and delegate methods
+form constructor
+{
+  countdown label is not visible
+  countdown label = 20
+  textbox.KeyPress event handler
+  exit button disabled
+  timer Interval = 1000
+  timer Tick event handler
+  navigate webbrowser to url
+  webbrowser DocumentCopetewd event handler
+  picturebox is not visible
+  exit button click event handler
+}
+
+TextBox__KeyPress
+{
+ if( timer not started )
+ {
+  start the timer
+  make countdown label visible
+ }
+
+ if( they typed the correct character )
+ {
+   show the happy face
+   if( they completed the whole phrase )
+   {
+     enable the exit button
+   }
+ }
+ else
+ {
+   show the sad picture
+ }
+}
+
+Timer__Tick
+{
+  if( the timer reaches 0 )
+  {
+     stop the timer
+     clear the textbox
+     hide the countdown label
+     reset the label to 20
+     face disappeared
+  }
+  else
+  {
+    decrement the countdown label
+  }
+}
+
+WebBrowser__DocumentCompleted
+{
+  get the array of anchor tags
+  set the Click event handler for each anchor tag (HtmlElement__Click)
+}
+
+HtmlElement__Click
+{
+  if( InnerText contains "again" )
+  {
+    change InnerText = "I asked you to stop it"
+    change style to purple and 2.5rem
+  }
+  else if( InnerText contains "clicked" )
+  {
+    change InnerText = "You clicked me again.  Now stop it"
+    change style to red and 2rem
+  }
+  else
+  {
+    change InnerText = "You clicked me!"
+    change style to blue and 1.5rem
+  }
+}

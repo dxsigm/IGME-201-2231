@@ -83,9 +83,11 @@ namespace EditPerson
             this.cancelButton.Click += new EventHandler(CancelButton__Click);
             this.okButton.Click += new EventHandler(OkButton__Click);
 
-            this.greatRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
-            this.okRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
-            this.mehRadioButton.CheckedChanged += new EventHandler(RatingRadioButton__CheckedChanged);
+            // add the event handler to the class radio buttons
+            this.froshRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.sophRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.juniorRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
+            this.seniorRadioButton.CheckedChanged += new EventHandler(this.ClassRadioButton__CheckedChanged);
 
             this.photoPictureBox.Click += new EventHandler(PhotoPictureBox__Click);
 
@@ -115,46 +117,78 @@ namespace EditPerson
             this.ageTextBox.Text = person.age.ToString();
             this.licTextBox.Text = person.LicenseId.ToString();
 
-            if( person.name == "" )
+            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
+
+            // RadioButtons should always default to one of them being checked
+            this.seniorRadioButton.Checked = true;
+
+            if ( person.name == "" )
             {
-                person.eFavoriteFood = EFavoriteFood.pizza;
+                // default the Them
+                this.themRadioButton.Checked = true;
             }
             else
             {
-                if( person.dateOfBirth > this.birthDateTimePicker.MinDate)
+                switch (person.eGender)
+                {
+                    case EGenderPronoun.her:
+                        this.herRadioButton.Checked = true;
+                        break;
+
+                    case EGenderPronoun.him:
+                        this.himRadioButton.Checked = true;
+                        break;
+
+                    case EGenderPronoun.them:
+                        this.themRadioButton.Checked = true;
+                        break;
+                }
+
+                if ( person.dateOfBirth > this.birthDateTimePicker.MinDate)
                 {
                     this.birthDateTimePicker.Value = person.dateOfBirth;
                 }
 
                 this.homepageTextBox.Text = person.homePageURL;
-            }
-
-            this.birthDateTimePicker.Value = this.birthDateTimePicker.MinDate;
-
-            switch( person.eFavoriteFood)
-            {
-                case EFavoriteFood.brocolli:
-                    this.brocolliRadioButton.Checked = true;
-                    break;
-
-                case EFavoriteFood.pizza:
-                    this.pizzaRadioButton.Checked = true;
-                    break;
-
-                case EFavoriteFood.apples:
-                    this.applesRadioButton.Checked = true;
-                    break;
-            }
+            }            
 
             this.photoPictureBox.ImageLocation = person.photoPath;
 
-
-            if( person.GetType() == typeof(Student) )
+            if( person is Student student )
+            //if( person.GetType() == typeof(Student) )
             {
-                this.typeComboBox.SelectedIndex = 0;
+                //Student student = (Student)person;
 
-                Student student = (Student)person;
+                this.typeComboBox.SelectedIndex = 0;
                 this.gpaTextBox.Text = student.gpa.ToString();
+
+                if (student.name == null)
+                {
+                    // default class year to senior
+                    this.seniorRadioButton.Checked = true;
+                }
+                else
+                {
+                    switch (student.eCollegeYear)
+                    {
+                        case ECollegeYear.freshman:
+                            this.froshRadioButton.Checked = true;
+                            break;
+
+                        case ECollegeYear.sophomore:
+                            this.sophRadioButton.Checked = true;
+                            break;
+
+                        case ECollegeYear.junior:
+                            this.juniorRadioButton.Checked = true;
+                            break;
+
+                        case ECollegeYear.senior:
+                        default:
+                            this.seniorRadioButton.Checked = true;
+                            break;
+                    }
+                }
             }
             else
             {
@@ -162,26 +196,7 @@ namespace EditPerson
 
                 Teacher teacher = (Teacher)person;
                 this.specTextBox.Text = teacher.specialty;
-
-                if( person.name == "")
-                {
-                    teacher.eRating = ERating.ok;
-                }
-
-                switch( teacher.eRating )
-                {
-                    case ERating.great:
-                        this.greatRadioButton.Checked = true;
-                        break;
-                    case ERating.ok:
-                        this.okRadioButton.Checked = true;
-                        break;
-                    case ERating.meh:
-                        this.mehRadioButton.Checked = true;
-                        break;
-                }
             }
-
 
             this.Show();
         }
@@ -228,7 +243,7 @@ namespace EditPerson
                     if( htmlElement != null)
                     {
                         htmlElement.InnerText = course.courseCode;
-                        htmlElement.Style += "background-color:red;";
+                        htmlElement.Style += "background-color:red;";                      
 
                         htmlElement.MouseDown += new HtmlElementEventHandler(SchHtmlElement__MouseDown);
                         // htmlElement.SetAttribute("title", $"Description: {course.description}\nReview: {course.review}");
@@ -606,28 +621,35 @@ namespace EditPerson
             }
         }
 
-        private void RatingRadioButton__CheckedChanged(object sender, EventArgs e)
+        private void ClassRadioButton__CheckedChanged(object sender, EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
 
-            if( rb.Checked )
+            // if the radio button is checked
+            if (rb.Checked)
             {
-                if( rb == this.greatRadioButton)
+                if (rb == this.froshRadioButton)
                 {
-                    this.ratingLabel.Text = "sign me up";
+                    classOfLabel.Text = "Class of 2023";
                 }
 
-                if( rb == this.okRadioButton)
+                if (rb == this.sophRadioButton)
                 {
-                    this.ratingLabel.Text = "ok";
+                    classOfLabel.Text = "Class of 2022";
                 }
 
-                if( rb == this.mehRadioButton)
+                if (rb == this.juniorRadioButton)
                 {
-                    this.ratingLabel.Text = "run away!";
+                    classOfLabel.Text = "Class of 2021";
+                }
+
+                if (rb == this.seniorRadioButton)
+                {
+                    classOfLabel.Text = "Class of 2020";
                 }
             }
         }
+
 
         private void OkButton__Click(object sender, EventArgs e)
         {
@@ -659,43 +681,50 @@ namespace EditPerson
             person.dateOfBirth = this.birthDateTimePicker.Value;
             person.homePageURL = this.homepageTextBox.Text;
             
-
-
-            if ( this.brocolliRadioButton.Checked)
-            {
-                person.eFavoriteFood = EFavoriteFood.brocolli;
-            }
-            else if( this.pizzaRadioButton.Checked)
-            {
-                person.eFavoriteFood = EFavoriteFood.pizza;
-            }
-            else if( this.applesRadioButton.Checked)
-            {
-                person.eFavoriteFood= EFavoriteFood.apples;
-            }
-
             person.photoPath = this.photoPictureBox.ImageLocation;
+
+            if (this.herRadioButton.Checked)
+            {
+                person.eGender = EGenderPronoun.her;
+            }
+
+            if (this.himRadioButton.Checked)
+            {
+                person.eGender = EGenderPronoun.him;
+            }
+
+            if (this.themRadioButton.Checked)
+            {
+                person.eGender = EGenderPronoun.them;
+            }
 
             if ( person.GetType() == typeof(Student))
             {
                 student.gpa = Convert.ToDouble(this.gpaTextBox.Text);
+
+                if (this.froshRadioButton.Checked)
+                {
+                    student.eCollegeYear = ECollegeYear.freshman;
+                }
+
+                if (this.sophRadioButton.Checked)
+                {
+                    student.eCollegeYear = ECollegeYear.sophomore;
+                }
+
+                if (this.juniorRadioButton.Checked)
+                {
+                    student.eCollegeYear = ECollegeYear.junior;
+                }
+
+                if (this.seniorRadioButton.Checked)
+                {
+                    student.eCollegeYear = ECollegeYear.senior;
+                }
             }
             else
             {
                 teacher.specialty = this.specTextBox.Text;
-
-                if( this.greatRadioButton.Checked)
-                {
-                    teacher.eRating = ERating.great;
-                }
-                else if( this.okRadioButton.Checked)
-                {
-                    teacher.eRating = ERating.ok;
-                }
-                else if( this.mehRadioButton.Checked)
-                {
-                    teacher.eRating = ERating.meh;
-                }
             }
 
             Globals.people[person.email] = person;
@@ -749,7 +778,8 @@ namespace EditPerson
 
                 this.gpaTextBox.Tag = (this.gpaTextBox.Text.Length > 0);
 
-                this.ratingGroupBox.Visible = false;
+                // college year group box should be visible for Student
+                this.classGroupBox.Visible = true;
             }
             else
             {
@@ -763,12 +793,8 @@ namespace EditPerson
 
                 this.specTextBox.Tag = (this.specTextBox.Text.Length > 0);
 
-                this.ratingGroupBox.Visible = true;
-
-                if( !this.greatRadioButton.Checked && !this.okRadioButton.Checked && !this.mehRadioButton.Checked)
-                {
-                    this.okRadioButton.Checked = true;
-                }
+                // college year group box should not be visible for Teacher
+                this.classGroupBox.Visible = false;
             }
 
             ValidateAll();
