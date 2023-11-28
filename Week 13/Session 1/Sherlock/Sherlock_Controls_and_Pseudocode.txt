@@ -3,7 +3,8 @@ form - "Sherlock"
 label - "The quick.."
 textbox for holding the answer
 countdown label - big and red and counted down from 20 by 1 second
-picturebox - happy face for correct characters/ sad face otherwise
+picturebox - happy face for correct characters
+picturebox - sad face
 timer control - countdown from 20
 groupbox - with URL as title
 webbrowser
