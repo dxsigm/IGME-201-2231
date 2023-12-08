@@ -1,4 +1,10 @@
-﻿using System;
+﻿// define THREE_BY_THREE to play the 3x3 tic tac toe board which has 8 solutions corresponding to the sets of 3 squares that add to 15
+// comment out the #define to play the 4x4 tic tac toe board which has 86 solutions corresponding to the sets of 4 squares that add to 34
+
+#define THREE_BY_THREE
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +13,10 @@ using System.IO;
 
 namespace TicTacToe
 {
-    // Adjacency Matrix (19,683 x 19,683)  (512 x 512) 
+    // Adjacency Matrix
+    // [512,512] for the 3x3 game because there are 2^9 possible game states
+    // [19,683,19,683] for the 4x4 game because there are 2^16 possible game states
+
 
     public class Node : IComparable<Node>
     {
@@ -58,11 +67,40 @@ namespace TicTacToe
 
     static class Program
     {
+#if THREE_BY_THREE
+        // represent the gameboard as a Magic Square to calculate winning states
+        static int[] nValues = new int[]
+        {
+                2, 7, 6,
+                9, 5, 1,
+                4, 3, 8
+        };
+
+        const int nMagicNumber = 15;
+
         // 9 spaces on the gameboard
         const int MAX_SPACES = 9;
 
         // 8 possible winning states
         const int MAX_WINSTATES = 8;
+#else
+        // represent the gameboard as a Magic Square to calculate winning states
+        static int[] nValues = new int[]
+        {
+            16,  3,  2, 13,
+             5, 10, 11,  8,
+             9,  6,  7, 12,
+             4, 15, 14,  1
+        };
+
+        const int nMagicNumber = 34;
+
+        // 16 spaces on the gameboard
+        const int MAX_SPACES = 16;
+
+        // 81 possible winning states
+        const int MAX_WINSTATES = 86;
+#endif
 
         // total states of our gameboard
         static int MAX_STATES = (int)Math.Pow(2, MAX_SPACES);
@@ -92,17 +130,7 @@ namespace TicTacToe
             int nWinner = 0;
             int nPlayer = 1;
 
-            // represent the gameboard as a Magic Square to calculate winning states
-            int[] nValues = new int[]
-            {
-                2, 7, 6,
-                9, 5, 1,
-                4, 3, 8
-            };
-
             int i;
-
-            int nMagicNumber = 15;
 
             int wCntr = 0;
 
@@ -148,11 +176,11 @@ namespace TicTacToe
 
                 //PrintBoard(i, 0, $"-----------------\nState: {i}");
 
-                //foreach (int n in aList[i].Item2)
-                //{
-                //    game[i].AddEdge(aList[n].Item1, game[n]);
-                //    PrintBoard(n, 0, $"-----------------\n        Neighbor: {n}");
-                //}
+                foreach (int n in aList[i].Item2)
+                {
+                    game[i].AddEdge(aList[n].Item1, game[n]);
+                    //PrintBoard(n, 0, $"-----------------\n        Neighbor: {n}");
+                }
             }
 
             for ( int j = 0; j < 100; ++j )
@@ -315,12 +343,12 @@ namespace TicTacToe
 
             Console.Write(outString);
 
-            if( fileHeader != null )
-            {
-                StreamWriter writer = new StreamWriter("c:/temp/ttt.txt", true);
-                writer.Write(outString);
-                writer.Close();
-            }
+            //if( fileHeader != null )
+            //{
+            //    StreamWriter writer = new StreamWriter("c:/temp/ttt.txt", true);
+            //    writer.Write(outString);
+            //    writer.Close();
+            //}
         }
 
 
@@ -345,13 +373,13 @@ namespace TicTacToe
                     aShortestPath[i] = GetShortestPathDijkstra(game[a], game[winStates[i]], b);
 
                     if( aShortestPath[i].Item2.Count > 0 &&
-                        (aShortestPath[i].Item2.Count == 2 ||
+                        (aShortestPath[i].Item2.Count == Math.Sqrt(MAX_SPACES) - 1 ||
                          aShortestPath[i].Item1 > aStrength) )
                     {
                         aPath = i;
 
                         // if a is about to win
-                        if (aShortestPath[i].Item2.Count == 2)
+                        if (aShortestPath[i].Item2.Count == Math.Sqrt(MAX_SPACES) - 1)
                         {
                             aStrength = 1000;
                         }
@@ -389,13 +417,13 @@ namespace TicTacToe
                     bShortestPath[i] = GetShortestPathDijkstra(game[b], game[winStates[i]], a);
 
                     if (bShortestPath[i].Item2.Count > 0 &&
-                        (bShortestPath[i].Item2.Count == 2 ||
+                        (bShortestPath[i].Item2.Count == Math.Sqrt(MAX_SPACES) - 1 ||
                          bShortestPath[i].Item1 > bStrength) )
                     {
                         bPath = i;
 
                         // if b is about to win and a is not
-                        if (bShortestPath[i].Item2.Count == 2 && aStrength < 1000)
+                        if (bShortestPath[i].Item2.Count == Math.Sqrt(MAX_SPACES) - 1 && aStrength < 1000)
                         {
                             bStrength = 1000;
                         }
@@ -432,7 +460,7 @@ namespace TicTacToe
             }
 
             // if b has a better move, then block
-            if (bStrength > aStrength)
+            if (bStrength >= aStrength)
             {
                 a |= (bMove ^ b);
             }
@@ -663,6 +691,8 @@ namespace TicTacToe
                 node.visited = false;
             }
 
+            start.minCostToStart = 0;
+
             if( DijstraSearch(start,ref target, b) )
             {
                 strength = 0;
@@ -716,6 +746,8 @@ namespace TicTacToe
                         continue;
                     }
 
+                    // if this neighbor is not already chosen by the other player
+                    // and it has not been visited or it is closer to the start
                     if ((childNode.nState & b) == 0 &&
                         (childNode.minCostToStart == int.MaxValue ||
                         node.minCostToStart + cnn.cost < childNode.minCostToStart) ) 
@@ -731,6 +763,8 @@ namespace TicTacToe
 
                 node.visited = true;
 
+                // set the target to the next state from the current player state
+                // ie. the target winning state may have more spaces chosen
                 if ((node.nState & target.nState) == target.nState )
                 {
                     target = node;
