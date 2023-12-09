@@ -460,7 +460,7 @@ namespace TicTacToe
             }
 
             // if b has a better move, then block
-            if (bStrength >= aStrength)
+            if (bStrength > aStrength)
             {
                 a |= (bMove ^ b);
             }
