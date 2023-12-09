@@ -15,7 +15,7 @@ namespace TicTacToe
 {
     // Adjacency Matrix
     // [512,512] for the 3x3 game because there are 2^9 possible game states
-    // [19,683,19,683] for the 4x4 game because there are 2^16 possible game states
+    // [19683,19683] for the 4x4 game because there are 2^16 possible game states
 
 
     public class Node : IComparable<Node>
